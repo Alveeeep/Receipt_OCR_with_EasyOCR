@@ -30,11 +30,11 @@ def ocr_receipt_easyocr(image_path):
     reader = easyocr.Reader(['ru', 'en'], gpu=True)
     # Распознавание текста
     result = reader.readtext(preprocessed_image, min_size=10, contrast_ths=0.05, adjust_contrast=0.5,
-                             text_threshold=0.5, detail=0, decoder='beamsearch', paragraph=True)
+                             text_threshold=0.5, detail=0, paragraph=True)
     return result
 
 
-image_path = 'src_images/IMG_4275.JPG'
+image_path = 'src_images/scale_1200.jfif'
 recognized_text = ocr_receipt_easyocr(image_path)
 
 # Вывод распознанного текста
